@@ -1,0 +1,120 @@
+@startuml "CATS Class Diagram"
+ class Simulation {
+    simDuration : Int
+    currentStep : Int
+    cellLength : Decimal
+    updateSimStep ()
+
+ }
+
+ class Network {
+    id : Int
+    roadList : List<Road>
+    nodeList : List<Node>
+    
+ }
+
+ class Road {
+    id : Int
+    numberOfLane : Int
+    name : String
+    startingNode : Node
+    endingNode : Node
+    length : Decimal
+    vehicleList : List<vehicle>
+    laneList : List<Lane>
+    Incline : Decimal
+    straightNextRoad : Road
+    rightTurnRoadList : List<Road>
+    lefTurnRoadList : List<Road>
+
+
+ }
+
+ class Lane {
+    id : Int
+    name : String
+    cellList : List<Cell>
+    road : Road
+
+ }
+
+ class Cell {
+    id : Int
+    name : String
+    
+    lane : Lane
+    isOcupied : Bool
+    isPassable : Bool
+ }
+
+ class Node {
+    id : Int
+    name : String
+    inRoadsList : List<Road>
+    outRoadsList : List<Road>
+
+ }
+
+ class Light {
+    id : Int
+    cell : Cell
+    greenDurationStep : Int
+    redDurationStep : Int
+    amberDurationStep : Int
+    currentColor : Int
+    
+    colorOrder : List<Int>
+ }
+
+ class Vehicle {
+    id : Int
+    engine : Engine
+    driver : Driver
+    lengthCell : Int
+    passangerCapacity : Int
+    maxCellSpeed : Int
+    currentCellSpeed : Int
+    currentRoad : Road
+    currentCell : Cell
+    isProbeVehicle : Bool
+
+    accelerate()
+    decelerate()
+    moveRightLane()
+    moveLeftLane()
+
+ }
+
+ class Engine {
+    id : Int
+    engineType : EngineType
+
+
+ }
+
+ class EngineType {
+    id : Int
+    name : String
+    fuelType : FuelType
+    fuelConsumptionUnit : String
+    fuelConsumptionAmount : Decimal
+
+ }
+
+ class Driver {
+    id : Int
+    name : String
+    driverType : DriverType
+    vehicle : Vehicle
+    origin : Node
+    destination : Node
+    lookAheadCellDistance : Int
+    lookBackCellDistance : Int
+    safeCellDistanceFront : Int
+    safeCellDistanceBack : Int
+    routeRoadList : List<Road>
+    
+
+ }
+@enduml
