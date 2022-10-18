@@ -11,6 +11,8 @@
     id : Int
     roadList : List<Road>
     nodeList : List<Node>
+    lightList : List<Light>
+
     
  }
 
@@ -53,6 +55,7 @@
     name : String
     inRoadsList : List<Road>
     outRoadsList : List<Road>
+    isUTurnPossible : Bool
 
  }
 
@@ -71,7 +74,7 @@
     id : Int
     engine : Engine
     driver : Driver
-    lengthCell : Int
+    length : Int
     passangerCapacity : Int
     maxCellSpeed : Int
     currentCellSpeed : Int
@@ -97,8 +100,16 @@
     id : Int
     name : String
     fuelType : FuelType
+    emissionStandart : String
     fuelConsumptionUnit : String
     fuelConsumptionAmount : Decimal
+    emissionCO : Decimal
+    emissionTHC : Decimal
+    emissionVOC : Decimal
+    emissionNOx : Decimal
+    emissionHCpNOx : Decimal
+    emissionP : Decimal
+    emissionPN : Decimal
 
  }
 
@@ -113,7 +124,24 @@
     lookBackCellDistance : Int
     safeCellDistanceFront : Int
     safeCellDistanceBack : Int
+    prefferedCellDistanceFront : Int
+    prefferedCellDistanceBack : Int
     routeRoadList : List<Road>
+    
+
+ }
+
+ class DriverType {
+    id : Int
+    name : String
+    minPrefferedCellDistanceFront : Int
+    maxPrefferedCellDistanceFront : Int
+    minrefferedCellDistanceBack : Int
+    maxPrefferedCellDistanceBack : Int
+    maxPatience : Int
+    minPatience : Int
+    minPrefferedDeceleration : Int
+    maxPrefferedDeceleration : Int
     
 
  }
