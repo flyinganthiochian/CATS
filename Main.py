@@ -1,10 +1,12 @@
 import datetime
 from Simulation import*
 from Test import*
+from Network import*
 
 def runSimulation(givenSimulation):
     givenSimulation.startTime=datetime.datetime.now() #simulation start time is recorded
     givenSimulation.makeInitialTests() #initial sim parameters are printed
+    givenSimulation.makeNetworkTests() #all the network Test will be done
     while givenSimulation.currentStep < givenSimulation.simDuration: #iteration of simulation until the end
         givenSimulation.updateSimulationStep()
     givenSimulation.endTime=datetime.datetime.now() #simulation end time is recorded
@@ -14,6 +16,7 @@ def runSimulation(givenSimulation):
     
 
 currentSim=Simulation()
+Network.createSiouxFallsNetwork(currentSim)
 
 runSimulation(currentSim)
 
