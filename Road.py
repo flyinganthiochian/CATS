@@ -40,6 +40,7 @@ class Road:
             self.name="F"+str(givenStartingNode.id)+"T"+str(givenEndingNode.id)
         else:
             self.name=givenName
+                     
         self.network=givenNetwork
         self.setNumberOfRoadCells()
         givenNetwork.roadList.append(self)
@@ -67,6 +68,11 @@ class Road:
         slope = ((givenRoad.startingNode.elevation-givenRoad.endingNode.elevation)*100)/givenRoad.length
         return slope
 
+    
+    
+
+    
+            
 
     def createSiouxFallsRoads(network):
         #this method creates all the roads of the default Sioux Falls Network

@@ -17,6 +17,8 @@ class Network:
         self.simulation = givenSimulation
     
 
+    
+
     def createSiouxFallsNetwork(currentSimulation):
         #this method creates default Sioux-Falls network
         siouxFallsNetwork = Network(currentSimulation)
@@ -24,3 +26,4 @@ class Network:
         #below all the nodes of the Sioux-Falls network is created
         Node.createSiouxFallsNodes(siouxFallsNetwork)
         Road.createSiouxFallsRoads(siouxFallsNetwork)
+        
