@@ -1,9 +1,10 @@
-from Node import *
-from Cell import *
-from Lane import *
-from Road import *
-from Simulation import * 
-from Test import *
+from Node import Node
+from Simulation import*
+from Node import*
+from Road import*
+from Lane import*
+from Cell import*
+from Test import*
 
 class Network:
     id=0

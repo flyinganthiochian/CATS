@@ -1,9 +1,10 @@
 import math
-from Network import *
-from Cell import *
-from Lane import *
-from Simulation import * 
-from Test import *
+from Simulation import*
+from Network import*
+from Node import*
+from Lane import*
+from Cell import*
+from Test import*
 
 class Road:
     id=0 
@@ -69,10 +70,7 @@ class Road:
         return slope
 
     
-    
 
-    
-            
 
     def createSiouxFallsRoads(network):
         #this method creates all the roads of the default Sioux Falls Network
