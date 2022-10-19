@@ -1,4 +1,6 @@
+from Lane import Lane
 from Node import Node
+from Road import Road
 from Simulation import*
 from Node import*
 from Road import*
@@ -16,7 +18,10 @@ class Network:
         self.id=Network.id #id of the network is given by the creation order
         givenSimulation.network=self #network is set as the simulation's network
         self.simulation = givenSimulation
-    
+    def createRoadLaneCells(self):
+
+        for roadCounter in range(len(self.roadList)):
+            Lane.createRoadLanes(self.roadList[roadCounter])
 
     
 
@@ -27,4 +32,10 @@ class Network:
         #below all the nodes of the Sioux-Falls network is created
         Node.createSiouxFallsNodes(siouxFallsNetwork)
         Road.createSiouxFallsRoads(siouxFallsNetwork)
+        siouxFallsNetwork.createRoadLaneCells()
+        
+
+    
+    
+        
         

@@ -1,4 +1,6 @@
+
 import math
+
 from Simulation import*
 from Network import*
 from Node import*
@@ -8,12 +10,13 @@ from Test import*
 
 class Road:
     id=0 
-    laneList = [] #all the lanes will be stored in this List<>
+    
     
 
     def __init__(self, givenNetwork,givenStartingNode,givenEndingNode,givenNumberOfLanes=1, givenName="",givenLength=0,givenElevation=0):
         Road.id +=1
         self.id=Road.id #id of the Road is given by the order of creation
+        self.laneList = [] #all the lanes will be stored in this List<>
         self.startingNode=givenStartingNode #road's starting node is set
         self.endingNode=givenEndingNode #road's ending node is set
         self.numberOfLanes=givenNumberOfLanes #number of lanes is set
@@ -44,6 +47,8 @@ class Road:
                      
         self.network=givenNetwork
         self.setNumberOfRoadCells()
+
+        
         givenNetwork.roadList.append(self)
     
     def setNumberOfRoadCells(self):
@@ -68,7 +73,9 @@ class Road:
         
         slope = ((givenRoad.startingNode.elevation-givenRoad.endingNode.elevation)*100)/givenRoad.length
         return slope
-
+    def createRoadLanes(self):
+        for laneCounter in range(self.numberOfLanes):
+            createdLane=Lane(self)
     
 
 
@@ -78,6 +85,7 @@ class Road:
 
         #creating roads starting from Node 1
         road12=Road(network,network.nodeList[0],network.nodeList[1],3)
+        
         road21=Road(network,network.nodeList[1],network.nodeList[0],3)
 
         road13=Road(network,network.nodeList[0],network.nodeList[2],3)

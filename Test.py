@@ -55,7 +55,7 @@ class Test:
         print("-------------------------------------")
         print("Total number of Roads in this network is = {node}".format(node=len(currentSim.network.roadList)))
         for Road in currentSim.network.roadList:
-            print("Road ID= {id} | Name= {name} | length = {length} | slope = {slope}".format(id=Road.id, name=Road.name, length=Road.length, slope=Road.slope))
+            print("| Name= {name} | Lane needed = {laneNum} | Lane = {lane} | cellNum = {cellNum}".format(name=Road.name, laneNum=Road.numberOfLanes, lane=len(Road.laneList), cellNum=len(Road.laneList[0].cellList)))
 
         print("-------------------------------------")
         print("***TEST-printNetworkRoadInfo ENDS***")

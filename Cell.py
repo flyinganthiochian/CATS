@@ -11,7 +11,12 @@ class Cell:
     def __init__(self,givenLane):
         Cell.id +=1
         self.id = Cell.id
-        givenLane.cellList.append(self)
+        
         self.lane=givenLane
+    
+    def createLaneCells(givenLane):
+        for cellCounter in range(givenLane.road.numberOfCells):
+            #print("Number of Cells = " + str(givenLane.road.numberOfCells))
+            givenLane.cellList.append(Cell(givenLane))
     
     
